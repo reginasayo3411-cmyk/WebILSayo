@@ -1,0 +1,160 @@
+/* HERO IMAGE HEADER */
+.hero-img-header {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 1.2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-img-header img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(59,25,95,0.13);
+  transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
+}
+.hero-img-header img:hover {
+  transform: scale(1.035) translateY(-4px);
+  box-shadow: 0 16px 48px rgba(59,25,95,0.18);
+}
+.hero-img-header figcaption {
+  margin-top: 0.5rem;
+  color: #444;
+  font-size: 1.08em;
+  background: rgba(255,255,255,0.85);
+  border-radius: 8px;
+  padding: 0.3em 1em;
+  box-shadow: 0 2px 8px #e6e6e6;
+}
+/* Poster-inspired theme matching the attached image */
+:root{
+  --poster-purple:#3b195f;
+  --poster-magenta:#ff4da6;
+  --poster-gold:#ffc857;
+  --poster-teal:#36b395;
+  --poster-navy:#06348b;
+  --poster-coral:#ff6b6b;
+  --bg-1:linear-gradient(135deg,#fff7e6 0%, #fff0f6 40%, #eef9ff 100%);
+  --surface:#ffffff;
+  --muted:#5a6b76;
+  --text:#0f2433;
+  --main-font: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--main-font);
+  color:var(--text);
+  background:var(--bg-1);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Layout container */
+.container{max-width:1200px;margin:0 auto;padding:2rem}
+
+
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:50;padding:0.8rem 0;background:linear-gradient(90deg,rgba(59,25,95,0.06),rgba(255,77,166,0.03));backdrop-filter: blur(4px);border-bottom:2px solid rgba(59,25,95,0.06)}
+.nav-container{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:1200px;margin:0 auto;padding:0 1rem}
+.nav-logo{font-weight:800;color:var(--poster-purple);text-decoration:none;font-size:1.1rem;letter-spacing:0.6px}
+.nav-links{display:flex;gap:0.6rem;align-items:center}
+.nav-links a{color:var(--poster-navy);text-decoration:none;padding:0.45rem 0.85rem;border-radius:10px;font-weight:600;position:relative;z-index:2}
+.nav-links a:hover{background:linear-gradient(90deg,var(--poster-magenta),var(--poster-teal));color:white;transform:translateY(-2px)}
+
+/* Dropdown menu for Kerjasama */
+.dropdown { position: relative; }
+.dropdown > a {
+  cursor: pointer;
+  display: inline-block;
+  color: var(--poster-navy);
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+.dropdown > a:hover, .dropdown:focus-within > a {
+  background: linear-gradient(90deg,var(--poster-magenta),var(--poster-teal));
+  color: white;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 110%;
+  min-width: 180px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(59,25,95,0.10);
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  z-index: 10;
+}
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: block;
+}
+.dropdown-content a {
+  display: block;
+  padding: 0.5rem 1.2rem;
+  color: var(--poster-navy);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.dropdown-content a:hover {
+  background: linear-gradient(90deg,var(--poster-magenta),var(--poster-teal));
+  color: white;
+}
+
+/* HEADER (big poster banner look) */
+.header{padding:1.6rem 1rem 2rem;text-align:center}
+.header-media{display:flex;justify-content:center;margin-bottom:0.9rem}
+.header-media img{width:100%;max-width:1100px;border-radius:14px;box-shadow:0 18px 40px rgba(59,25,95,0.12);object-fit:cover}
+.header h1{font-size:2.6rem;color:var(--poster-purple);margin:0.4rem 0;font-weight:800;text-shadow:0 6px 18px rgba(255,77,166,0.06)}
+.header p{color:var(--muted);font-weight:600}
+
+/* Cards arranged like poster blocks */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:1rem}
+.card{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,0.98),#fff);padding:1rem;border-radius:14px;box-shadow:0 10px 30px rgba(20,20,40,0.06);border:1px solid rgba(59,25,95,0.04)}
+.card.large{grid-column:span 8}
+.card.side{grid-column:span 4}
+.card h2{font-size:1.1rem;margin-bottom:0.6rem;color:var(--poster-magenta);font-weight:800}
+.card p{color:var(--muted)}
+
+/* big statistic badges */
+.stats{display:flex;gap:0.8rem;flex-wrap:wrap}
+.stat{background:linear-gradient(180deg,rgba(255,197,87,0.08),rgba(255,77,166,0.03));padding:1rem;border-radius:12px;flex:1;min-width:160px;text-align:center}
+.stat .num{font-size:1.9rem;font-weight:900;color:var(--poster-purple)}
+.stat .label{font-weight:700;color:var(--poster-navy)}
+
+/* Buttons */
+.primary-button{display:inline-block;padding:0.6rem 1rem;border-radius:12px;color:white;background:linear-gradient(90deg,var(--poster-magenta),var(--poster-teal));text-decoration:none;font-weight:700;box-shadow:0 12px 32px rgba(59,25,95,0.12)}
+.outline{padding:0.45rem 0.8rem;border-radius:10px;border:2px dashed rgba(59,25,95,0.06);font-weight:700;color:var(--poster-purple);background:transparent}
+
+/* lists and icons */
+.list-emoji li{margin-bottom:0.6rem;display:flex;gap:0.6rem;align-items:flex-start}
+.list-emoji li i{font-size:1.2rem;color:var(--poster-magenta);margin-top:3px}
+
+/* reference tiles */
+.reference-list{display:flex;gap:0.6rem;flex-wrap:wrap}
+.reference-list a{display:block;padding:0.6rem 0.8rem;border-radius:10px;background:linear-gradient(90deg,rgba(255,200,87,0.06),rgba(255,77,166,0.03));text-decoration:none;color:var(--poster-navy);font-weight:700}
+
+/* responsive */
+@media(min-width:900px){.card{grid-column:span 12}.card.large{grid-column:span 8}.card.side{grid-column:span 4}}
+@media(max-width:899px){.grid{grid-template-columns:repeat(1,1fr)}.header h1{font-size:1.9rem}}
+
+/* small helpers */
+.text-center{text-align:center}
+.small-muted{color:var(--muted);font-size:0.95rem}
+
+/* subtle decorative ribbons */
+.ribbon{display:inline-block;padding:0.25rem 0.6rem;border-radius:999px;background:linear-gradient(90deg,var(--poster-gold),var(--poster-magenta));color:#1b1b1b;font-weight:800;font-size:0.85rem}
+
+/* Accessibility focus styles */
+a:focus{outline:3px solid rgba(59,25,95,0.12);outline-offset:3px}
+
+/* End of theme */
